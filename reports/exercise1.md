@@ -1,3 +1,4 @@
+[第一次练习文档](../exercise1.md)
 # 1 编译内核
 1. 克隆仓库
 ```bash
@@ -7,7 +8,11 @@ $ git clone https://github.com/Rust-for-Linux/linux -b rust-dev
 ```bash
 $ git clone https://github.com/fujita/linux.git -b rust-e1000
 ```
-但这个仓库要求Rust版本为1.62, 因此我选择第一个仓库
+但这个仓库要求Rust版本为1.62, 需要使用`rustup`设置版本
+```bash
+$ rustup toolchain install 1.62.0
+$ rustup default 1.62.0
+```
 2. 安装依赖
 ```bash
 $ sudo apt-get -y install \
@@ -22,7 +27,7 @@ $ sudo apt install clang llvm
 $ cd linux
 $ rustup override set $(scripts/min-tool-version.sh rustc)
 $ rustup component add rust-src
-$ cargo install --locked --version $(scripts/min-tool-version.sh bindgen) bindgen-cli
+$ cargo install --locked --version $(scripts/min-tool-version.sh bindgen) bindgen
 $ make LLVM=1 rustavailable
 ```
 3. 编译内核
