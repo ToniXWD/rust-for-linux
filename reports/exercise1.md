@@ -1,4 +1,4 @@
-[第一次练习文档](../exercise1.md)
+[第一次练习文档](../exercise/exercise1.md)
 # 1 编译内核
 1. 克隆仓库
 ```bash
